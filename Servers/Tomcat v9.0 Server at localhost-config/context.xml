@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/TestDB" auth="Container"
+		type="javax.sql.DataSource" maxTotal="100" maxIdle="30"
+		maxWaitMillis="10000" username="javauser" password="javadude"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/javatest" />
+
+	<!-- Default set of monitored resources. If one of these changes, the -->
+	<!-- web application will be reloaded. -->
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+	<WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+
+	<!-- Uncomment this to disable session persistence across Tomcat restarts -->
+	<!-- <Manager pathname="" /> -->
+	<Resource name="mysql/ssar" auth="Container"
+		type="javax.sql.DataSource" maxTotal="100" maxIdle="30"
+		maxWaitMillis="10000" username="ssar" password="bitc5600"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/ssar?serverTimezone=Asia/Seoul" />
+
+	<Resource name="jdbc/myoracle" auth="Container"
+		type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@127.0.0.1:1521:mysid" username="scott"
+		password="tiger" maxTotal="20" maxIdle="10" maxWaitMillis="-1" />
+</Context>
